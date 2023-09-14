@@ -1,0 +1,148 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+
+  @include mobile-only() {
+    row-gap: 24px;
+  }
+
+  .instructions {
+    @include heading-m();
+  }
+
+  .units {
+    display: flex;
+    justify-content: flex-start;
+
+    .label {
+      color: $title-color;
+      @include responsive-desktop(238);
+
+      @include tablet-only() {
+        width: calc((299 / 768) * 100vw);
+      }
+
+      @include mobile-only() {
+        width: calc((128 / 375) * 100vw);
+      }
+    }
+  }
+}
+
+.values {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 16px;
+
+  .values__label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    // width: 50%;
+    color: $font-color;
+
+    width: calc((238 / 1440) * 100vw);
+
+    @include tablet-only() {
+      width: calc((299 / 748) * 100vw);
+    }
+
+    @include mobile-only() {
+      width: 100%;
+    }
+
+    .height-input,
+    .weight-input {
+      // @include responsive-desktop(190);
+      // width: 50%;
+      height: 29px;
+      margin-top: 8px;
+      padding: 20px 24px;
+      font-size: 1.5rem;
+
+      border-radius: 12px;
+      border: 1px solid $border-color;
+
+      @include mobile-only() {
+        width: calc((232 / 375) * 100vw);
+      }
+    }
+    .height-unit,
+    .weight-unit {
+      position: absolute;
+      bottom: 20px;
+      right: 24px;
+      font-size: 1.5rem;
+      color: $primary-color;
+    }
+  }
+}
+
+.label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 31px;
+  padding-left: 49px;
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 31px;
+  height: 31px;
+  border-radius: 100%;
+  border: 1px solid $border-color;
+}
+
+.radio {
+  position: absolute;
+  opacity: 0;
+}
+
+.radio:checked ~ .checkmark {
+  background-color: $primary-color-pale;
+}
+.radio:checked ~ .checkmark::after {
+  content: ' ';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  background-color: $primary-color;
+}
+
+.values__label.extra-value {
+  display: none;
+}
+
+.imperial {
+  display: flex;
+  gap: calc((24 / 1440) * 100vw);
+
+  @include mobile-only {
+    flex-direction: column;
+  }
+  & .extra-value {
+    display: flex;
+
+    // width: calc((238 / 1440) * 100vw);
+
+    // @include tablet-only() {
+    //   width: calc((299 / 748) * 100vw);
+    // }
+
+    // @include mobile-only() {
+    //   width: 100%;
+    // }
+  }
+}

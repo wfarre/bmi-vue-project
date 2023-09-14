@@ -1,0 +1,36 @@
+@mixin heading-xl {
+  font-size: calc((64 / 1440) * 100vw);
+  font-weight: 600;
+  line-height: 110%;
+  color: $title-color;
+
+  @include tablet-only() {
+    font-size: calc((48 / 768) * 100vw);
+    font-weight: 600;
+    line-height: 110%;
+  }
+
+  @include mobile-only() {
+    font-size: calc((48 / 375) * 100vw);
+    font-weight: 600;
+    line-height: 110%;
+  }
+}
+
+@mixin heading-m {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 110%;
+  color: $title-color;
+}
+
+@mixin heading-l {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 110%;
+  color: $title-color;
+
+  @include tablet-only {
+    font-size: 2rem;
+  }
+}

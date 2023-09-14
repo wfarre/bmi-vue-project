@@ -1,0 +1,15 @@
+@mixin responsive-desktop($width) {
+  width: calc(($width/1440) * 100vw);
+}
+
+@mixin tablet-only {
+  @media all and (max-width: 980px) {
+    @content;
+  }
+}
+
+@mixin mobile-only {
+  @media all and (max-width: 500px) {
+    @content;
+  }
+}
