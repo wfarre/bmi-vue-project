@@ -4,6 +4,11 @@
 
   @include tablet-only() {
     margin: 0;
+    // height: calc(354px + 403px + 64px);
+  }
+
+  @include mobile-only() {
+    // height: calc(471px + 601px + 48px);
   }
 
   .logo {
@@ -97,23 +102,30 @@
 
     @include tablet-only() {
       position: absolute;
+      position: relative;
       top: 354px;
       width: calc((622 / 768) * 100vw);
       // left: calc((39 / 768) * 100vw);
       right: calc((43 / 768) * 100vw);
       // left: auto;
+
+      top: auto;
+      right: 0;
+      bottom: calc((640px - 354px));
+      margin: 0 auto;
     }
 
     @include mobile-only() {
-      top: 471px;
+      // top: 471px;
       // top: 0;
       // right: 0;
       // bottom: calc(640px - 471px);
       // width: calc(100% - 3 * 24px);
       width: calc((280 / 375) * 100vw);
-      right: calc((23 / 375) * 100vw);
+      // right: calc((23 / 375) * 100vw);
       padding: 24px;
       row-gap: 24px;
+      bottom: calc(640px - 471px);
     }
 
     .result {

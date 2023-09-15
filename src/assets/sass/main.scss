@@ -36,6 +36,7 @@ fieldset {
 
   @include tablet-only {
     margin-top: 277px;
+    margin-top: calc(96px - 640px + 354px);
     padding-top: 0;
     padding-left: 0;
     padding-right: 43px;
@@ -43,6 +44,7 @@ fieldset {
 
   @include mobile-only {
     margin-top: 552px;
+    margin-top: calc(72px - 640px + 471px);
     padding: 0;
   }
 
@@ -140,13 +142,16 @@ fieldset {
         width: auto;
         display: flex;
         justify-content: center;
+        justify-content: space-between;
         flex-wrap: wrap;
         align-items: stretch;
         row-gap: 24px;
         column-gap: calc((15 / 768) * 100vw);
+        column-gap: 0;
       }
 
       @include mobile-only {
+        flex-direction: column;
         row-gap: 16px;
       }
     }
@@ -293,12 +298,10 @@ fieldset {
     &:nth-child(1) {
       grid-area: header;
       justify-self: center;
-      // grid-area: 1 / 6 / 2 / 9;
     }
 
     &:nth-child(2) {
       grid-area: mid1;
-      background-color: aqua;
     }
 
     &:nth-child(3) {
@@ -311,7 +314,19 @@ fieldset {
 
     &:nth-child(5) {
       grid-area: bottom2;
+
+      @include tablet-only {
+        justify-self: center;
+        margin-right: auto;
+        margin-left: auto;
+      }
     }
+
+    // &:last-child() {
+    //   padding-right: auto;
+    //   padding-left: auto;
+    //   // justify-self: center;
+    // }
 
     .card__header {
       display: inline-flex;
