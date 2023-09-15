@@ -59,7 +59,8 @@ fieldset {
     .section__main {
       padding: 88px calc((116 / 1440) * 100vw) 96px calc((116 / 1440) * 100vw);
       background: linear-gradient(290deg, #d6e6fe 0%, rgba(214, 252, 254, 0.001) 100%);
-      background: linear-gradient(290deg, #d6e6fe 0%, #fff 100%);
+      background: linear-gradient(290deg, hsl(216, 95%, 92%, 0.4) 0%, #fff 100%);
+      // background: linear-gradient(290deg, #d6e6fe 0%, rgba(214, 252, 254, 0) 100%);
 
       border-radius: 35px;
 
@@ -100,8 +101,13 @@ fieldset {
       padding-right: calc((29 / 375) * 100vw);
     }
     .section__header {
-      width: auto;
-      text-align: center;
+      width: calc((564 / 1440) * 100vw);
+      // text-align: center;
+
+      @include tablet-only {
+        width: auto;
+        text-align: center;
+      }
     }
 
     .section__main {
@@ -161,6 +167,12 @@ fieldset {
     position: absolute;
     top: 0;
     right: calc((140 / 1440) * 100vw);
+
+    &--right {
+      right: auto;
+      left: calc((305 / 1440) * 100vw);
+      top: calc(67px + 184px);
+    }
 
     @include tablet-only {
       display: none;

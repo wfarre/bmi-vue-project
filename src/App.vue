@@ -15,6 +15,9 @@ import { ref, watch } from 'vue'
     <SectionExplanation />
     <SectionAdvice />
     <section class="section section--limitations">
+      <div class="decoration-img decoration-img--right">
+        <img src="./assets/images/pattern-curved-line-right.svg" alt="" />
+      </div>
       <header class="section__header">
         <h2 class="section__header__title">Limitations of BMI</h2>
         <p class="section__header__content">
